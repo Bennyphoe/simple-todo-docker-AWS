@@ -1,3 +1,5 @@
+URL : http://simple-todo-lb-frontend-170241889.us-west-2.elb.amazonaws.com/
+
 Some Learning Points
 - When setting the configurations for application.properties, use ENV variables
 Syntax is ${<ENV name>:<default value>}
