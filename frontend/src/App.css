@@ -1,0 +1,29 @@
+.background {
+  background-color: #f6f8dd;
+  height: 100%;
+}
+
+.tasks-container {
+  max-height: 70%;
+  background-color: #f6f8dd;
+  overflow-y: auto;
+}
+
+.task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background-color: rgb(196, 235, 254);
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.action-group {
+  position: absolute;
+  right: 10px
+}
