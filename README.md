@@ -2,7 +2,28 @@ URL : http://simple-todo-lb-frontend-170241889.us-west-2.elb.amazonaws.com/
 
 URL might not down if services are stopped. Im currently using free tier so it won't be up forever!
 
-Some Learning Points
+`Screenshots:`
+
+**Add Task**
+
+![image](https://github.com/user-attachments/assets/e3940f1b-4db5-408e-9103-1b65bb13e8ac)
+
+
+**Update Task**
+
+![image](https://github.com/user-attachments/assets/2d880f7d-0b00-454c-bb25-02819d8b22b2)
+
+![image](https://github.com/user-attachments/assets/be0272af-b1c1-4695-9a56-c8035843d521)
+
+
+**Delete Task**
+
+![image](https://github.com/user-attachments/assets/c3fd52a1-68ac-4c6d-be90-0a3837e0421b)
+
+
+
+
+`Some Learning Points`
 - When setting the configurations for application.properties, use ENV variables
 Syntax is ${<ENV name>:<default value>}
 This is so that we can override the ENV variables during development and deployment differently	
