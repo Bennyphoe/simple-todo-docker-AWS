@@ -1,6 +1,23 @@
 URL : http://simple-todo-lb-frontend-170241889.us-west-2.elb.amazonaws.com/
 
-URL might not down if services are stopped. Im currently using free tier so it won't be up forever!
+URL might be down if services on AWS are stopped (will incur charges if I keep it running forever) :(
+
+`Steps during development:`
+1. Make sure docker compose is able to run locally first, or start with using docker commands like docker run to test if Dockerfile is configured properly
+2. Locally instead of using RDS managed services, we can use dockerhub’s mySQL image to run a mySQL container along side spring boot application
+3. Use env variables in the application.properties file in spring boot to connect to the database. When run locally, we can set env variables in a .env file e.g. username, password, database name, host address, port. Select this .env file in docker compose
+4. Once locally its working i.e. front end can communicate with backend and backend can pull and write data to the database
+5. Create a Database in AWS RDS, set up a security group to allow connection from the backend container’s security group to the port of the database e.g. 3306. Create an initial database too.
+6. Copy the database’s credentials and also the endpoint.
+7. Configure the backend container’s task definition, set Environment variables e.g. credentials for DB, host address of DB, port number etc, security groups e.g. 80 or 8080 and override Entry Point if required.
+8. Start the service with a load balancer, set correct path for health checks and choose the port to listen on and also the appropriate security groups to allow inbound connection to the application
+9. Once service is up and running, get the load balancer’s endpoint
+10. In the front end code, configure the API address to use the backend’s load balancer endpoint if process.env.NODE_ENV is in production. If its development use localhost
+11. Create a separate Dockerfile e.g. Dockerfile.prod that builds the React project and use NGINX to serve the files on a web server hosted on port 80
+12. Build image and push to docker hub
+13. Create task definition and create service for the front end application, security group should allow incoming to port 80
+14. Access Load balancer’s endpoint of front end
+
 
 `Screenshots:`
 
